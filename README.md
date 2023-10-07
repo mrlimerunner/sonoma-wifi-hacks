@@ -14,12 +14,16 @@ OCLP can be downloaded [here](https://github.com/dortania/OpenCore-Legacy-Patche
 		 **Note**: Add `csr-active-config` to `NVRAM>Delete>7C436110-AB2A-4BBB-A880-FE41995C9F82` as well or make sure to reset your NVRAM. Adding it to this section of your ``config.plist`` means OpenCore will take care of changing the value for you on reboot automatically.
  - AMFI set to disabled. In your `config.plist` add the following to your boot arguments under `NVRAM>Add7C436110-AB2A-4BBB-A880-FE41995C9F82`.
 	 - ``boot-args | string | amfi=0x80``
-- Secure Boot Model set to `Disabled`. Changing the secure boot status **requires** and NVRAM reset, if not some variables are retained which can cause issue with IMG4 verification in macOS. (Thanks to [Kronokernel](https://github.com/khronokernel) for the heads up!)
-- **Block** kext: `com.apple.iokit.IOSkywalkFamily` (reference plist: availabe [here](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Config/config.plist#L1695-L1710), thanks OCLP team!) Make sure to set the `min kernel` value in your plist to 23.0.0 so this is only blocked for Sonoma if you are booting multiple OS versions.
-![Block Example](https://i.imgur.com/48bNWgo.png)
--**Inject** kexts: [IOSkywalk.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Kexts/Wifi/IOSkywalkFamily-v1.0.0.zip), [IO80211FamilyLegacy.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Kexts/Wifi/IO80211FamilyLegacy-v1.0.0.zip) - **this one also has a child kext** `AirPortBrcmNIC.kext` make sure that is injected as well. For all three set the `min kernel` version to 23.0.0 so they are only injected in Somona if you are booting multiple OS versions.
-![kernel add](https://i.imgur.com/jq7Lqcf.png)
-- Once the changes have been applied, reboot, reset your NVRAM and then OpenCore Legacy Patcher should now show the option to apply root patches.
+ - Secure Boot Model set to `Disabled`. Changing the secure boot status **requires** and NVRAM reset, if not some variables are retained which can cause issue with IMG4 verification in macOS. (Thanks to [Kronokernel](https://github.com/khronokernel) for the heads up!)
+
+
+ - **Block** kext: `com.apple.iokit.IOSkywalkFamily` (reference plist: availabe [here](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Config/config.plist#L1695-L1710), thanks OCLP team!) Make sure to set the `min kernel` value in your plist to 23.0.0 so this is only blocked for Sonoma if you are booting multiple OS versions.
+ ![Block Example](https://i.imgur.com/48bNWgo.png)
+
+
+ -**Inject** kexts: [IOSkywalk.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Kexts/Wifi/IOSkywalkFamily-v1.0.0.zip), [IO80211FamilyLegacy.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Kexts/Wifi/IO80211FamilyLegacy-v1.0.0.zip) - **this one also has a child kext** `AirPortBrcmNIC.kext` make sure that is injected as well. For all three set the `min kernel` version to 23.0.0 so they are only injected in Somona if you are booting multiple OS versions.
+ ![kernel add](https://i.imgur.com/jq7Lqcf.png)
+ - Once the changes have been applied, reboot, reset your NVRAM and then OpenCore Legacy Patcher should now show the option to apply root patches.
 
 
 ## Root Patching Process
