@@ -26,6 +26,7 @@ Original instructions provided by OCLP team reference [here](https://github.com/
 	- Click `Start Root Patching`to have OCLP being to make its changes. **NOTE: ** OCLP needs root privleges in order to modify system files. If the application asks to re-start as root, make sure to click yes and proivde your password. Alternative you can run the application through Terminal with the `sudo` option.
 	![Root Patching](https://i.imgur.com/IZjb79r.png)
 	- When OCLP has finished patching, you'll get a pop up asking you to reboot. Reboot and you should have working wifi on your system! WOOHOO!
+   
 	![Reboots](https://i.imgur.com/WgK0H77.png)
 	
 
