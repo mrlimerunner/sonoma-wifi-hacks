@@ -3,7 +3,7 @@
  - *The Hackintosh paradise discord provides limited support for Hack's running root patching of any kind, including OCLP. If you are not comfortable with patching your system, or maintaining a root patched system you should remain on a version of macOS that supports your hardware.* 
 
 Original instructions provided by OCLP team reference [here](https://github.com/dortania/OpenCore-Legacy-Patcher/pull/1077#issuecomment-1646934494).
-
+Get OCLP [here](https://github.com/dortania/OpenCore-Legacy-Patcher).
 ## Pre-Root Patching
 
  - SIP (System Integrity Protection) must be set to a reduced state, 0x803. In your `config.plist` make sure the following value is set under `NVRAM>Add>7C436110-AB2A-4BBB-A880-FE41995C9F82`.
