@@ -14,7 +14,7 @@ OCLP can be downloaded [here](https://github.com/dortania/OpenCore-Legacy-Patche
 		 **Note**: Add `csr-active-config` to `NVRAM>Delete>7C436110-AB2A-4BBB-A880-FE41995C9F82` as well or make sure to reset your NVRAM. Adding it to this section of your ``config.plist`` means OpenCore will take care of changing the value for you on reboot automatically.
  - AMFI set to disabled. In your `config.plist` add the following to your boot arguments under `NVRAM>Add7C436110-AB2A-4BBB-A880-FE41995C9F82`.
 	 - ``boot-args | string | amfi=0x80``
-- Secure Boot Model set to `Disabled`. Changing the secure boot status **requires** and NVRAM reset, if not some variables are retained which can cause issue with IMG4 verification in macOS. (Thanks to [Kronokernel](https://github.com/khronokernel) for the heads up!)
+- Secure Boot Model set to `Disabled`. Changing the secure boot status **requires** an NVRAM reset, if not some variables are retained which can cause issue with IMG4 verification in macOS. (Thanks to [Kronokernel](https://github.com/khronokernel) for the heads up!)
 	
 	- [ApECID](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apecid) *cannot* be used with root patches, it needs to be disabled and remain disabled.
 - **Block** kext: `com.apple.iokit.IOSkywalkFamily` (reference plist: availabe [here](https://github.com/dortania/OpenCore-Legacy-Patcher/blob/e21efa975c0cf228cb36e81a974bc6b4c27c7807/payloads/Config/config.plist#L1695-L1710), thanks OCLP team!) Make sure to set the `min kernel` value in your plist to 23.0.0 so this is only blocked for Sonoma if you are booting multiple OS versions.
