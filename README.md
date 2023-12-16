@@ -45,7 +45,7 @@ OCLP can be downloaded [here](https://github.com/dortania/OpenCore-Legacy-Patche
 # Other Important Notes: 
 - Once your root volume has been patched, SIP must remain at least partially disabled (the settings applied to your config.plist), or ***you will not be able to properly boot your system***.
 - Delta updates are unavailable to root patched sytems, so updates will show as the full 12GB+ installers. Though not recommended, it is possible to revert your patches and update, then re-apply them if you absolutely cannot download the full update, but do so at your own risk.
-- AMFI can be partially re-enabled using [AMFIPass.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) from OCLP, and using the boot args `-lilubetaall` and `-amfipassbeta` in your NVRAM section. This can be handy if you're running into issues with an application you use related to AMFI.
+- AMFI can be partially re-enabled using [AMFIPass.kext](https://github.com/dortania/OpenCore-Legacy-Patcher/tree/main/payloads/Kexts/Acidanthera) from OCLP. This can be handy if you're running into issues with an application you use related to AMFI.
 - If you run into issues with Electron based apps after disabling sip, ie: *Discord*, *Google Chrome*, *VS Code*, you can try adding the following boot arg `ipc_control_port_options=0` NVRAM settings.
 
 
